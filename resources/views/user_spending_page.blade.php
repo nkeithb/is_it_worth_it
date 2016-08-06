@@ -11,6 +11,11 @@
                         @foreach($plans as $plan)
                             <h2>
                                 {{ $plan->name }} --
+                                <form class="form-horizontal" role="form" method="POST" action="{{ url('/update_plan/' . $plan->id) }}">
+                                    <button type="submit" class="btn btn-small btn-warning ">
+                                        <i class="fa fa-btn fa-money"></i> Update
+                                    </button>
+                                </form>
                                 <form class="form-horizontal" role="form" method="get" action="{{ url('/delete_plan/' . $plan->id) }}">
                                     <button type="submit" class="btn btn-small btn-warning ">
                                         <i class="fa fa-btn fa-money"></i> Delete
@@ -58,7 +63,14 @@
                                 <label for="range_type" class="col-md-4 control-label">Range Type</label>
 
                                 <div class="col-md-6">
-                                    <input id="range_type" type="text" class="form-control" name="range_type" value="{{ old('range_type') }}">
+                                    <select id="range_type" type="text" class="form-control" name="range_type" value="{{ old('range_type') }}">
+                                        <option value="Daily">Daily</option>
+                                        <option value="Weekly">Weekly</option>
+                                        <option value="Monthly">Monthly</option>
+                                        <option value="Annual">Annual</option>
+                                        <option value="Constant">Constant</option>
+                                        <option value="Justice4Harambe">Harambe</option>
+                                    </select>
                                 </div>
                             </div>
 

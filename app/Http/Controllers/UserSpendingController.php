@@ -27,4 +27,11 @@ class UserSpendingController extends Controller
         SpendingPlan::find($id)->delete();
         return redirect()->action('UserSpendingController@userSpendingPage');
     }
+
+    public function updateSpendingPlan(Request $request)
+    {
+        $user = \Auth::user();
+        $user->spendingPlan()->create(['name' => $request->get('name'), 'amount_spent' => $request->get('amount_spent'), 'range_type' => $request->get('range_type')]);
+        return redirect()->action('UserSpendingController@userSpendingPage');
+    }
 }
