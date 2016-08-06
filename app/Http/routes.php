@@ -20,3 +20,7 @@ Route::auth();
 Route::get('/home', 'HomeController@index');
 
 Route::get('/spending_page', [ 'middleware' => 'auth', 'uses' => 'UserSpendingController@userSpendingPage']);
+
+Route::post('/submit_plan', ['middleware' => 'auth', 'uses' => 'UserSpendingController@addSpendingPlan']);
+
+Route::get('/delete_plan/{id}', ['middleware' => 'auth', 'uses' => 'UserSpendingController@deleteSpendingPlan']);
