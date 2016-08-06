@@ -41,8 +41,8 @@
                 </button>
 
                 <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    Weeee
+                <a class="navbar-brand" href="{{ url('/spending_page') }}">
+                    Spending
                 </a>
             </div>
 
