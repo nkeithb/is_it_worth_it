@@ -29,6 +29,8 @@ require __DIR__.'/../vendor/autoload.php';
 
 $compiledPath = __DIR__.'/cache/compiled.php';
 
+require_once __DIR__.'/../app/AppFunctions.php';
+
 if (file_exists($compiledPath)) {
     require $compiledPath;
 }
