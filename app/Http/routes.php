@@ -18,3 +18,5 @@ Route::get('/', function () {
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+
+Route::get('/spending_page', [ 'middleware' => 'auth', 'uses' => 'UserSpendingController@userSpendingPage']);

@@ -8,7 +8,7 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    I'm a shit dick fucking retard.
+                    Welcome to Is It Worth It!
                 </div>
             </div>
         </div>

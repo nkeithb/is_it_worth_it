@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUserInputsTable extends Migration
+class CreateSpendingPlansTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class CreateUserInputsTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_inputs', function (Blueprint $table) {
+        Schema::create('spending_plans', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->integer('amount_spent');
@@ -32,6 +32,6 @@ class CreateUserInputsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('user_inputs');
+        Schema::drop('spending_plans');
     }
 }
