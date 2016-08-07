@@ -25,4 +25,6 @@ Route::post('/submit_plan', ['middleware' => 'auth', 'uses' => 'UserSpendingCont
 
 Route::get('/delete_plan/{id}', ['middleware' => 'auth', 'uses' => 'UserSpendingController@deleteSpendingPlan']);
 
+Route::get('/spending_plan/{id}', ['middleware' => 'auth', 'uses' => 'UserSpendingController@updateSpendingPlanPage']);
+
 Route::post('/update_plan/{id}', ['middleware' => 'auth', 'uses' => 'UserSpendingController@updateSpendingPlan']);

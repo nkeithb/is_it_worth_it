@@ -12,7 +12,7 @@ class UserSpendingController extends Controller
         $user = \Auth::user();
         $plans = $user->getSpendingPlans();
 
-        return view('user_spending_page')->with(['user' => $user, 'plans' => $plans]);
+        return view('spending_plans.user_spending_page')->with(['user' => $user, 'plans' => $plans]);
     }
 
     public function addSpendingPlan(Request $request)
@@ -28,10 +28,14 @@ class UserSpendingController extends Controller
         return redirect()->action('UserSpendingController@userSpendingPage');
     }
 
-    public function updateSpendingPlan(Request $request)
+    public function updateSpendingPlanPage($id)
     {
-        $user = \Auth::user();
-        $user->spendingPlan()->create(['name' => $request->get('name'), 'amount_spent' => $request->get('amount_spent'), 'range_type' => $request->get('range_type')]);
-        return redirect()->action('UserSpendingController@userSpendingPage');
+        return view('spending_plans.update_spending_plan')->with(['plan' => SpendingPlan::find($id)]);
+    }
+
+    public function updateSpendingPlan($id)
+    {
+        SpendingPlan::find($id)->update(['name' => \Request::get('name'), 'amount_spent' => \Request::get('amount_spent'), 'range_type' => \Request::get('range_type')]);
+        return redirect()->action('UserSpendingController@updateSpendingPlanPage', [$id]);
     }
 }

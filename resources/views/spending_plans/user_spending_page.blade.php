@@ -11,13 +11,13 @@
                         @foreach($plans as $plan)
                             <h2>
                                 {{ $plan->name }} --
-                                <form class="form-horizontal" role="form" method="POST" action="{{ url('/update_plan/' . $plan->id) }}">
+                                <form class="form-horizontal" role="form" method="GET" action="{{ url('/spending_plan/' . $plan->id) }}">
                                     <button type="submit" class="btn btn-small btn-warning ">
                                         <i class="fa fa-btn fa-money"></i> Update
                                     </button>
                                 </form>
                                 <form class="form-horizontal" role="form" method="get" action="{{ url('/delete_plan/' . $plan->id) }}">
-                                    <button type="submit" class="btn btn-small btn-warning ">
+                                    <button type="submit" class="btn btn-small btn-danger ">
                                         <i class="fa fa-btn fa-money"></i> Delete
                                     </button>
                                 </form>
